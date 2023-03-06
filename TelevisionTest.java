@@ -1,25 +1,19 @@
-class Television {
-    int     channel;
-    int     volume;
-    boolean isOn;
-
-    void status() {
-        if(isOn == true) {
-            System.out.println("TV가 켜져있습니다.");
-            System.out.println("Channel : " + channel + ", Volume : " + volume);
-        } else {
-            System.out.println("TV가 꺼져있습니다.");
-        }
-    }
-}
-
 public class TelevisionTest {
     public static void main(String[] args) {
         Television myTv = new Television();
-        myTv.channel = 7;
+        myTv.setChannel(5); 
+        int ch = myTv.getChannel(); //ch에 myTv.channel 값 저장
         myTv.volume = 10;
-        myTv.isOn = true;
-        myTv.status();
+        myTv.onOff = true;
+    System.out.print("현재 나의 채널은 " + ch + "입니다.");        
+        Television yourTv = new Television();
+        yourTv.channel = 3;
+        yourTv.volume = 10;
+        yourTv.onOff = true;
+        myTv.setChannel(5);
+        ch = yourTv.getChannel();
+        System.out.print("현재 너의 채널은 " + ch + "입니다.");      
+        // myTv, yourTv의 변수 값은 각각 다른 저장공간을 가짐   
     }
 }
 
